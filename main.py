@@ -1,18 +1,22 @@
 import time
 
 start_int = int(time.time())
+try:
 
-rounding_amount = int(input("Random Number Digits (up to 10): "))
+    rounding_amount = int(input("Random Number Digits (up to 10): "))
+        
+    rounding_amount = rounding_amount - rounding_amount * 2
 
-rounding_amount = rounding_amount - rounding_amount * 2
+    timestamp_list = [int(i) for i in str(start_int)]
 
-timestamp_list = [int(i) for i in str(start_int)]
+    timestamp_list = timestamp_list[rounding_amount:]
 
-timestamp_list = timestamp_list[rounding_amount:]
+    output = ''
 
-output = ''
+    for x in timestamp_list:
+        output += '' + str(x)
 
-for x in timestamp_list:
-    output += '' + str(x)
+    print(output)
 
-print(output)
+except:
+    print("You broke it!")
